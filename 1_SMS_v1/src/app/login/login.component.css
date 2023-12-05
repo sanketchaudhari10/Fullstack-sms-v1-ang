@@ -1,0 +1,10 @@
+.login {
+  display: block;
+  width: max-content;
+
+  margin: 100px auto;
+}
+button {
+  width: 100%;
+  border: none;
+}

@@ -1,0 +1,4 @@
+---------Student Management App(Angular FrontEnd)-------------
+-This frontend is responsible for fetching the data from backend API, but which is not yet ready 
+-Hence, we will just create the REST service with blank implementation of methods
+-ToDo Once the bakend is ready, make HTTP call using HTTP module.

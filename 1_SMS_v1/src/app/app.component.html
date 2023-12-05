@@ -1,0 +1,23 @@
+<mat-toolbar color="primary">
+
+    <mat-icon (click)="s.toggle()">menu</mat-icon>
+    <app-header></app-header>
+
+</mat-toolbar>
+
+<!--Side NavBar and Main Content-->
+<mat-sidenav-container>
+    <!-- It is possible in angular to give reference to any tag in Html using # symbol -->
+    <!-- It is known as template reference -->
+    <mat-sidenav #s opened="false" mode="push">
+        <!-- Menu -->
+        <app-menu (click)="s.toggle()"></app-menu>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+<app-footer></app-footer>

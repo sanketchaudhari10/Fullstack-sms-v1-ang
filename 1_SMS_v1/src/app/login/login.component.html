@@ -1,0 +1,20 @@
+<div class="login">
+    <h2>Login</h2>
+    <form (ngSubmit)="performLogin()">
+        <!-- Form Field -->
+        <mat-form-field>
+            <mat-label>Username</mat-label>
+            <input matInput type="text" name="username" placeholder="username" [(ngModel)]="username" />
+            <mat-hint>5 characters minimum</mat-hint>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input matInput type="password" name="password" placeholder="password" [(ngModel)]="password" />
+        </mat-form-field>
+        <br>
+        <button mat-raised-button color="primary" type="submit">Submit</button>
+    </form>
+
+    {{message}}
+</div>

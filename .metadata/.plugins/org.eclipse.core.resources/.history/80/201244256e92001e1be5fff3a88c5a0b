@@ -1,0 +1,9 @@
+package in.co.vwits.sms.service.impl;
+
+import in.co.vwits.sms.model.User;
+
+public interface UserService {
+
+	Boolean authenticate(User u);
+
+}

@@ -1,0 +1,25 @@
+<mat-dialog-content>
+    <h2>Student Update Form</h2>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <form id="studentForm" (ngSubmit)="performUpdate()" method="POST">
+        <label for="rollno">Roll Number:</label>
+        <input type="text" id="rollno" name="rollno" [(ngModel)]="toUpdatedStudent.rollno" readonly><br><br>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" [(ngModel)]="toUpdatedStudent.name" readonly><br><br>
+
+        <label for="numberOfAttempts">Number of Attempts:</label>
+        <input type="number" id="numberOfAttempts" name="numberOfAttempts"
+            [(ngModel)]="toUpdatedStudent.numberOfAttempts" required><br><br>
+
+        <label for="percentage">Percentage:</label>
+        <input type="number" id="percentage" name="percentage" step="0.01" [(ngModel)]="toUpdatedStudent.percentage"
+            required><br><br>
+
+        <label for="subjects">Subjects Learning:</label>
+        <textarea id="subjects" rows="4" cols="30" name="subjects"
+            [(ngModel)]="toUpdatedStudent.subjectsLearning"></textarea>
+        <!-- <button type="submit" value="Update">Update</button> -->
+        <button [mat-dialog-close]="toUpdatedStudent">Update</button>
+    </form>
+</mat-dialog-actions>

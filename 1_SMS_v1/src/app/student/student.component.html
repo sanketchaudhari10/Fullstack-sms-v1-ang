@@ -1,0 +1,46 @@
+<div class="studentpg">
+    <div class="sortbuttons">
+        <mat-radio-group>
+            <mat-radio-button (click)="sortByPercent()">By Percentage</mat-radio-button>
+            <mat-radio-button (click)="sortByAttempts()">By Attempts</mat-radio-button>
+            <mat-radio-button (click)="sortByNoOfSubjects()"> By Number of Subjects</mat-radio-button>
+        </mat-radio-group>
+    </div>
+    <h3>Student list is:</h3>
+    <table *ngIf="students.length>0">
+        <thead>
+            <th>Roll No.</th>
+            <th>Name</th>
+            <th>No. Of Attempts</th>
+            <th>Percentage</th>
+            <th>Subjects</th>
+            <th>Actions</th>
+        </thead>
+        <tbody>
+
+            <tr *ngFor="let student of students">
+                <td>{{student.rollno}}</td>
+                <td>{{student.name | uppercase}}</td>
+                <td>{{student.numberOfAttempts}}</td>
+                <td>{{student.percentage/100 | percent}}</td>
+                <td>
+                    <ol>
+                        <li *ngFor="let s of student.subjectsLearning">{{s}}</li>
+                    </ol>
+                </td>
+                <td>
+                    <button mat-raised-button color="primary" (click)="update(student)">Update</button>
+                    <button mat-raised-button color="warn" (click)="delete(student.rollno)">Delete</button>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <!-- <button (click)=" showMessage()">Click to see students</button> -->
+    <span [class]="colorClass">{{message}}</span>
+
+    <div *ngIf="updateClick">
+        <app-student-update [updatedStudent]="selectedStudent" (studentEmitter)="doUpdate($event)"></app-student-update>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+package in.co.vwits.sms.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
+import in.co.vwits.sms.model.User;
+
+public interface UserRepository extends JpaRepository<User, String>{
+
+//	@Query("FROM User AS u WHERE u.username=:uname")
+//	User findOne(@Param(value = "uname") String username);
+}

@@ -1,0 +1,36 @@
+package in.co.vwits.sms.rest.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import in.co.vwits.sms.model.User;
+import in.co.vwits.sms.service.impl.UserService;
+
+@RestController
+@RequestMapping(value="/api/login")
+public class UserRestController {
+	
+		
+		@Autowired
+		private UserService service;
+		
+		
+		
+		@PostMapping(value="")
+		public Boolean authenticateUser(@RequestBody User u){
+			return service.authenticate(u);
+		}
+}
+
+
+
+
+
+
+
+	
+
+

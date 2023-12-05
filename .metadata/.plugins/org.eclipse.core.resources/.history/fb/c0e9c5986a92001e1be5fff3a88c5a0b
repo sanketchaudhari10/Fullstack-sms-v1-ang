@@ -1,0 +1,37 @@
+package in.co.vwits.sms.rest.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import in.co.vwits.sms.model.Student;
+import in.co.vwits.sms.model.User;
+import in.co.vwits.sms.service.StudentService;
+
+@RestController
+@RequestMapping(value="/api/login")
+public class UserRestController {
+	
+		
+		@Autowired
+		private StudentService service;
+		
+		
+		
+		@GetMapping(value="")
+		public User findByRollNo(@PathVariable User u){
+			return service.findSpecificStudentWithSubjects(rollNo);
+		}
+}
+
+
+
+
+
+
+
+	
+
+
